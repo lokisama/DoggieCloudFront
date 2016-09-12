@@ -1,0 +1,115 @@
+
+<div class="row">
+   
+    <div class="col-md-12">
+    <form class="form-horizontal form-row-seperated" method="post" name="taskForm" ng-submit="save(taskForm)" ng-validate="validationOptions">
+        <div class="portlet light">
+        <div class="portlet-title">
+            <div class="caption caption-md">
+                <i class="icon-bar-chart theme-font hide"></i>
+                <span class="caption-subject font-blue-madison bold uppercase">创建新任务</span>
+                
+            </div>
+            <div class="actions btn-set">
+               
+                <!-- <button class="btn btn-secondary-outline" ng-click="reset()">
+                    <i class="fa fa-reply"></i> 重置</button> -->
+                <button class="btn btn-success" type="submit">
+                    <i class="fa fa-check"></i> 保存</button>
+                
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="form-group">
+                <label class="col-md-2 control-label">预期推广数:
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-10">
+                    <input type="number" class="form-control" name="name" placeholder=""
+                    ng-model="request.requiredNum"> </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">国家二字:
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="title" placeholder=""
+                    ng-model="request.countryCode"> </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 control-label">推广产品:
+                    <span class="required"> * </span>
+                </label>
+                <div class="col-md-9 col-md-offset-1">
+                    <div class="form-group form-md-checkboxes">
+                        <div class="md-checkbox-inline" ng-repeat="o in itemList">
+                            <div class="md-checkbox">
+                                <input type="checkbox" id="{{o.itemId}}" class="md-check" checked="checked">
+                                <label for="{{o.itemId}}">
+                                    <span></span>
+                                    <span class="check"></span>
+                                    <span class="box"></span> {{o.name}} </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+
+            </div>
+
+            
+        </div>
+        </div>
+    </form>
+    </div>
+
+    
+</div>
+<style>
+.mt-head-title{
+    display: -webkit-box; 
+    text-overflow: ellipsis;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    padding: 5px 10px!important;
+}    
+</style>
+<div class="row">
+<div class="col-md-12">
+        <div class="portlet light portlet-fit ">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-microphone font-dark hide"></i>
+                    <span class="caption-subject bold font-dark uppercase"> 您的商品</span>
+                    <span class="caption-helper">最新商品</span>
+                </div>
+                
+            </div>
+            <div class="portlet-body">
+                <div class="row">
+                    <div  ng-repeat="o in list">
+                    <div class="col-md-4" style="margin-bottom:5px;">
+                        <div class="mt-widget-4">
+                            <div class="mt-img-container">
+                                <img ng-src="{{o.picUrls}}" src="../assets/pages/img/background/34.jpg" /> </div>
+                            <div class="mt-container bg-purple-opacity">
+                                <div class="mt-head-title" ng-bind="o.name">  </div>
+
+                                <div class="mt-footer-button">
+                                <button type="button" class="btn btn-circle btn-danger btn-sm" ng-disabled="itemList.indexOf(o) > -1" ng-click="addToItemList(o)" >Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
