@@ -1,0 +1,132 @@
+
+<h3 class="page-title"> 商品编辑
+    <small ng-bind="action">添加</small>
+</h3>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="icon-home"></i>
+            <a ui-sref="products">商品管理</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <span>商品编辑</span>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal form-row-seperated" method="post" name="product" ng-submit="save(product)" ng-validate="validationOptions">
+            <div class="portlet">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-shopping-cart"></i>基本信息 </div>
+                    <div class="actions btn-set">
+                        <!-- <button type="button" name="back" class="btn btn-secondary-outline">
+                            <i class="fa fa-angle-left"></i> Back</button> -->
+                        <button class="btn btn-secondary-outline" ng-click="reset()">
+                            <i class="fa fa-reply"></i> 重置</button>
+                        <button class="btn btn-success" type="submit">
+                            <i class="fa fa-check"></i> 保存</button>
+                        
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="tabbable-bordered">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#tab_general" data-toggle="tab"> 基本信息 </a>
+                            </li>
+                    
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_general">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">中文名:
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="name" placeholder=""
+                                            ng-model="data.name"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">英文名:
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="title" placeholder=""
+                                            ng-model="data.title"> </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">图片地址:
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="picUrls" placeholder=""
+                                            ng-model="data.picUrls"> </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">购买地址:
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="checkOutUrl" placeholder=""
+                                            ng-model="data.checkOutUrl"> </div>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">单价:
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" name="value" placeholder=""
+                                            ng-model="data.value"> </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">货币单位:
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-10">
+                                            <select class="table-group-action-input form-control input-medium" name="currency"
+                                            ng-model="data.currency">
+                                                <option value="">选择货币...</option>
+                                                <option value="AUD" selected="selected">澳元</option>
+                                                <option value="USD">美元</option>
+                                                <option value="RMB">人民币</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">产品描述:
+                                            
+                                        </label>
+                                        <div class="col-md-10">
+                                            <textarea rows="10" class="form-control" name="description"
+                                            ng-model="data.description"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">备注:
+                                            
+                                        </label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" name="note"
+                                            ng-model="data.note"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
